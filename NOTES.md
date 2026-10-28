@@ -1,0 +1,7 @@
+## 28 Oct 2026: first look (PS0)
+- File: OpenData_OPNational02_2026.csv (OP by specialty), Jan–Sep 2026
+- All columns loaded as text. Cause: numbers have commas (e.g. 1,234).
+  Fix: read_csv(..., thousands=","). Counts now int64.
+- No missing values found (recheck after converting types).
+- ArchiveDate needs pd.to_datetime(dayfirst=True).
+- Confused by: unique() vs nunique(), np.int64 in repr output.
