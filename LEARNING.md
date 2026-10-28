@@ -1,12 +1,12 @@
 # Learning Path — The Waiting List (data track)
 
-Colin's data learning plan, worked through **on this repo**: SQL, Python for SQL and pandas, using Irish public hospital waiting list data from the NTPF. Each step is a real change to the project, so the learning and the portfolio grow together.
+Colin's data learning plan, worked through **on this repo**: SQL, pandas and Python for SQL, using Irish public hospital waiting list data from the NTPF. Each step is a real change to the project, so the learning and the portfolio grow together.
 
-**Why this project:** real Irish health data, relevant to public sector data analyst roles (HSE, CSO, civil service), with Colin's QA background built in through data-quality tests.
+**Why this project:** real Irish health data, relevant to public sector data analyst roles (HSE, CSO, civil service), with Colin's QA background built in through data-quality tests. SQL and pandas count for both the QA and data paths.
 
 **QA track** (Playwright, Python for QA) lives in [back_in_bounds](https://github.com/colinjpaul/back_in_bounds).
 **Study time:** weekday mornings, at Colin's own pace (no deadlines). Mon/Wed/Fri mornings are the waiting list days.
-**Progress checklist:** ticked off on the Learning path panel of Colin's *Daily Board*. Step IDs (D, S, PS, P) match that checklist.
+**Progress checklist:** the Learning path panel of Colin's *Daily Board* is the master list. Step IDs here (PS0, S1, KP1, PB1…) match it exactly. Update the `[ ]` boxes here as well if useful.
 
 ## How to help (for Claude in VS Code)
 
@@ -22,50 +22,63 @@ Colin's data learning plan, worked through **on this repo**: SQL, Python for SQL
 - Each file holds **monthly snapshots** of how many people are waiting, in time bands (0–6, 6–12, 12–18, 18+ months). It is not activity data: no numbers treated or removed.
 - Privacy adjustments: cells under 5 are replaced with an average of the small values, and specialty/hospital combinations under 20 people are grouped as "Small Volume". Subtotals may not reconcile exactly.
 - Format changed in April 2021 (separate adult and child reports). Older files (2014–Mar 2021) are on data.gov.ie.
+- Context data: CSO population figures (data.cso.ie, PxStat) for waits per head of population.
 
 ---
 
-## 0 · Setup and first look
+## Start here
 
-- [ ] **D1** Project setup: folders `data/raw/`, `notebooks/`, `sql/`, `tests/`; a virtual environment; `requirements.txt` (pandas, jupyter, pytest); `data/raw/` in `.gitignore`.
-- [ ] **D2** First look: download the 2026 OP by specialty CSV; in `notebooks/01_explore.ipynb` run `read_csv`, `.head()`, `.shape`, `.info()`, `.columns`. Which months does it cover? Which columns load as text instead of numbers, and why?
-- [ ] **D3** First question: total people waiting in each month. Write three or four lines in `NOTES.md` on what you found and what confused you.
+- [ ] **PS0** Kick-off: new repo, download one outpatient CSV, load it in pandas. Answer: how many are waiting at Cork hospitals, which specialty waits longest, and is it up or down over the year?
+  - Setup: folders `data/raw/`, `notebooks/`, `sql/`, `tests/`; a virtual environment; `requirements.txt` (pandas, jupyter, pytest); `data/raw/` and `.venv/` in `.gitignore`.
+  - Write three or four lines in `NOTES.md` on what you found and what confused you.
 
-## 1 · SQL — `data/waiting_list.db` (SQLite)
+## 1 · SQL — `waiting.db` (SQLite)
 
-Load the CSVs into SQLite (a short Python script is fine at first; PS2 makes it clean). Practise in DB Browser for SQLite, the VS Code SQLite extension, or the `sqlite3` CLI. Save good queries in `sql/`.
+Practise in DB Browser for SQLite, the VS Code SQLite extension, or the `sqlite3` CLI. Save good queries in `sql/`.
 
-- [ ] **S1** `SELECT`, `WHERE`, `ORDER BY`, `LIMIT`: the 10 specialties with the most people waiting 18+ months in the latest month.
-- [ ] **S2** Aggregates: totals per month with `GROUP BY`; specialties with over 10,000 waiting using `HAVING`; adult vs child totals.
-- [ ] **S3** JOINs: join the by-hospital and by-specialty tables, or add a small `hospitals` lookup table (hospital → group/region, e.g. South/Southwest for Cork); use a `LEFT JOIN` to find hospitals with no lookup entry.
-- [ ] **S4** Subqueries and CTEs: specialties above the national average wait; a CTE comparing Cork hospitals with the national picture.
-- [ ] **S5** Window functions: month-on-month change with `LAG()`; `RANK()` specialties by 18+ month waits; rolling 3-month average.
-- [ ] **S6** Data-quality checks: SQL that finds duplicate rows, NULLs, negative counts, time bands that don't add up to `Total`, and hospitals that disappear between months. Wire these into pytest as data tests.
-- [ ] **S7** Writes: `INSERT` a new month's data, `UPDATE` a correction, wrap it in a transaction and roll back.
+- [ ] **S1** Load the NTPF outpatient CSV into SQLite (`waiting.db`); `SELECT` / `WHERE` / `ORDER BY`: Cork hospitals.
+- [ ] **S2** `GROUP BY`: total waiting by hospital and by specialty.
+- [ ] **S3** Add an inpatient/day case table and `JOIN` on hospital.
+- [ ] **S4** Subqueries and CTEs: share waiting over 12 months by specialty.
+- [ ] **S5** Window functions: month-on-month change (`LAG()`) and `RANK()` of longest waits.
+- [ ] **S6** Data-quality SQL wired into pytest: NULLs, negative counts, unknown hospitals, time bands that don't add up to `Total`.
+- [ ] **S7** Monthly refresh: `INSERT` the new month inside a transaction.
 
-## 2 · Python for SQL
+## 2 · pandas — Kaggle course, then each lesson on the waiting list data
 
-- [ ] **PS1** `sqlite3` in Python: connect, run parameterised queries (never string-format SQL).
-- [ ] **PS2** pandas `read_sql` and `to_sql`: a `load_data.py` script that loads every CSV in `data/raw/` into SQLite cleanly and idempotently (safe to run twice).
-- [ ] **PS3** pandas cleaning: fix column types, tidy column names, combine monthly snapshots from several years into one table.
-- [ ] **PS4** pandas `groupby` / `merge` next to the equivalent SQL from S2/S3; confirm both give the same numbers in a test.
-- [ ] **PS5** SQLAlchemy: create an engine so the project could switch from SQLite to PostgreSQL by changing one URL.
-- [ ] **PS6** Test the data layer: pytest fixtures that build a temporary SQLite DB, load sample rows, and test your queries.
+Course: https://www.kaggle.com/learn/pandas. Do a lesson, then try it on the NTPF data the same day.
 
-## 3 · pandas analysis and storytelling
+- [ ] **KP1** Creating, reading and writing
+- [ ] **KP2** Indexing, selecting and assigning
+- [ ] **KP3** Summary functions and maps
+- [ ] **KP4** Grouping and sorting
+- [ ] **KP5** Data types and missing values
+- [ ] **KP6** Renaming and combining
 
-- [ ] **P1** Reshaping: `melt` the time-band columns into long format; `pivot_table` specialty × month.
-- [ ] **P2** Time series: build your own history from several years of files; `resample` and `rolling` to show trends.
-- [ ] **P3** Charts: seaborn/matplotlib charts of the biggest movers, Cork vs national, adult vs child.
-- [ ] **P4** Second source: add CSO population figures to estimate waits per head of population by region.
-- [ ] **P5** Write-up: a short findings notebook or README section, written for a non-technical reader.
+## 3 · Python for SQL — pandas + SQL with tests
+
+- [ ] **PS1** `sqlite3` with parameterised queries (pick hospital/specialty); never string-format SQL.
+- [ ] **PS2** Load script: CSV → SQLite with `read_csv` / `to_sql`, safe to run twice.
+- [ ] **PS3** Clean and combine several months into one tidy table.
+- [ ] **PS4** pandas `groupby` / `merge` vs SQL, checked in a test.
+- [ ] **PS5** SQLAlchemy engine (SQLite → PostgreSQL ready).
+- [ ] **PS6** pytest fixtures with a temporary test database.
 
 ## Portfolio milestones
 
-- [ ] **F2** Data loaded into SQLite with analysis queries in `sql/` and data-quality tests passing (S6, PS6).
-- [ ] **F4** Data-quality tests running in GitHub Actions with a status badge.
-- [ ] **F5** README with the question, the data source, key findings, charts and a short "what I learned" section.
+- [ ] **F2** SQLite + SQL queries + data tests.
+- [ ] **F3** README: CI badge, findings and what I learned.
 
-## Later
+## Power BI · low priority, for the data path
 
-NumPy, a first scikit-learn model (e.g. forecast next month's waiting list), and possibly a small dashboard.
+Power BI Desktop doesn't run on a Mac: use a Windows laptop or VM, or Tableau Public instead.
+
+- [ ] **PB1** Microsoft Learn: Get started with Power BI (free modules).
+- [ ] **PB2** Load the waiting list data into Power BI and clean it in Power Query.
+- [ ] **PB3** One-page report: waiting trend, Cork hospitals, longest-wait specialties.
+- [ ] **PB4** DAX basics: measures for total waiting and % over 12 months.
+- [ ] **PB5** Publish the report and add a screenshot and link to the README.
+
+## Later: pandas and data science
+
+Reshaping (`pivot_table`, `melt`), time series (`resample`, `rolling`), seaborn charts, NumPy, a first scikit-learn model (e.g. forecast next month's waiting list), CSO population data for waits per head, and maths at your own pace.
