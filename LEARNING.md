@@ -5,12 +5,12 @@ Colin's single learning plan from 2026-10-29: **interview-ready Python at senior
 **Why:** getting a job is the priority. The Python part of the Qualcomm interview (22 Oct) showed live coding needs work, so this follows Stage 2 of `qualcomm_prep_plan.xlsx` (Google Drive): about 8 weeks to "comfortable live-coding at senior SDET level". The waiting list app is where those skills get used, and it shows QA skills (pytest, Playwright, CI) and data skills (pandas, SQL) in one place.
 
 **back_in_bounds** is paused. Nothing there is deleted.
-**Study time:** weekday mornings, 8:30–10:30, at Colin's own pace. The week numbers are a guide, not deadlines.
+**Study time:** at Colin's own pace: **9:30–10:30** Mon–Fri for the daily problem, **2:30–3:30** Mon–Thu for the project step (Friday afternoon is family time). These match the focus blocks in *My day* on the Daily Board. The week numbers are a guide, not deadlines.
 **Progress checklist:** the Learning path panel of Colin's *Daily Board* mirrors this file. Step IDs (PS0, D1, A1…) match it.
 
 ## How to help (for Claude in VS Code)
 
-- Each session has two parts: **the daily problem first, then one project step.**
+- Each day has two parts: **the daily problem in the morning block (9:30–10:30), then one project step in the afternoon block (2:30–3:30).**
 - **Daily problem: no AI while Colin writes it.** When asked, give the problem statement and example input/output only: no hints, no code. Afterwards, review his solution like an interviewer would: correctness, edge cases, naming, tests, and how he'd explain it out loud. Suggest a better version only after he's had his go.
 - **Project steps:** teach, don't just do. Explain the concept, let Colin write the code, then review it.
 - Start by checking `NOTES.md`, the `practice/` folder and the notebooks to see where he's up to.
@@ -18,7 +18,7 @@ Colin's single learning plan from 2026-10-29: **interview-ready Python at senior
 - Encourage a line in `NOTES.md` for each finding, cleaning decision or practice problem.
 - Raw CSVs stay out of git (`data/raw/` is ignored); the README says where each file came from.
 
-## The daily problem (every session, 30–45 min)
+## The daily problem (morning block, 30–45 min)
 
 1. Ask Claude for today's problem, matched to the current week's focus below.
 2. Set a timer (aim for 20 minutes by week 2). Talk through it **out loud** as if in an interview.

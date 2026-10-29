@@ -7,7 +7,7 @@ Colin's main project and learning plan (from 2026-10-29): interview-ready Python
 Read **LEARNING.md** at the start of a session and follow its "How to help" section. Step IDs (PS0, D1, A1, M1…) match the Learning path checklist on Colin's Daily Board.
 
 How to help, in short:
-- Each session has two parts: the daily Python problem first, then one project step.
+- Each day has two parts: the daily Python problem in the morning (9:30–10:30), then one project step in the afternoon (2:30–3:30).
 - Daily problem: Colin writes it **without AI**. Give the problem statement and examples only, then review his solution like an interviewer.
 - Project steps: teach, don't just do. Explain the concept, let Colin write the code, then review it.
 - Ask where he's up to and check `NOTES.md`, `practice/` and the notebooks first.
@@ -18,7 +18,7 @@ How to help, in short:
 
 Colin works in three places. Keep them separate:
 
-- **VS Code (here): the learning.** Weekday mornings 8:30–10:30: the daily no-AI problem, then one project step. When Colin says "start today's session", read `LEARNING.md`, `NOTES.md` and `practice/`, tell him where he's up to, and give today's problem.
+- **VS Code (here): the learning.** Morning block 9:30–10:30: the daily no-AI problem. Afternoon block 2:30–3:30: one project step. When Colin says "start today's session" in the morning, read `LEARNING.md`, `NOTES.md` and `practice/`, tell him where he's up to, and give today's problem. In the afternoon, pick up the next project step.
 - **The repo: the single record of progress.** Plan in `LEARNING.md`, findings and practice results in `NOTES.md`, code in `practice/` and `notebooks/`. If it isn't in the repo, it didn't happen.
 - **The "New Job" project in the Claude desktop app: the job search.** CVs, cover letters, applications, company-specific interview prep, and bigger decisions about focus. Decisions there that change the learning plan land here as handoff notes below.
 
