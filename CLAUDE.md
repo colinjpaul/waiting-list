@@ -1,16 +1,18 @@
 # The Waiting List
 
-Colin's data analysis project on Irish public hospital waiting lists (NTPF open data), using Python, pandas, SQL and pytest data-quality tests. It's his main portfolio project for public sector data analyst roles and the data side of QA.
+Colin's main project and learning plan (from 2026-10-29): interview-ready Python at senior SDET level, built into a "How long will I wait?" app on Irish public hospital waiting list data (NTPF open data). It uses Python, pandas, pytest data-quality tests, Dash, Playwright and GitHub Actions, so it shows both QA and data skills. Getting a job is the priority. `back_in_bounds` is paused.
 
 ## Learning plan
 
-Read **LEARNING.md** at the start of a session and follow its "How to help" section. Step IDs (PS0, S1, KP1…) match the Learning path checklist on Colin's Daily Board. The QA track (Playwright, Python for QA) lives in the separate `back_in_bounds` repo.
+Read **LEARNING.md** at the start of a session and follow its "How to help" section. Step IDs (PS0, D1, A1, M1…) match the Learning path checklist on Colin's Daily Board.
 
 How to help, in short:
-- Teach, don't just do. Explain the concept, let Colin write the code, then review it.
-- One step per session. Ask where he's up to and check `NOTES.md` and the notebooks first.
-- Keep explanations plain and concrete; he's rebuilding Python and learning pandas from the basics.
-- Encourage a line in `NOTES.md` for each cleaning decision or finding.
+- Each session has two parts: the daily Python problem first, then one project step.
+- Daily problem: Colin writes it **without AI**. Give the problem statement and examples only, then review his solution like an interviewer.
+- Project steps: teach, don't just do. Explain the concept, let Colin write the code, then review it.
+- Ask where he's up to and check `NOTES.md`, `practice/` and the notebooks first.
+- Keep explanations plain and concrete; he's rebuilding Python fluency and learning pandas from the basics.
+- Encourage a line in `NOTES.md` for each finding, cleaning decision or practice problem.
 
 ## Handoff notes (from Colin's planning chat in the Claude desktop app)
 
@@ -29,3 +31,7 @@ Colin also plans with Claude in the desktop app. That chat can't talk to this on
     4. Is the list up or down over the year? (Total per month.)
 - **2026-10-29 · housekeeping done**
   - `data/raw/` and `.DS_Store` are now in `.gitignore`; the raw CSV is no longer tracked. The README says where to download the data. Raw files live only on Colin's Mac.
+- **2026-10-29 · new plan (decided in Claude Code)**
+  - LEARNING.md rewritten as one plan following Stage 2 of `qualcomm_prep_plan.xlsx`: 8 weeks of a daily no-AI Python problem plus project steps towards the app. Old step IDs (S1, KP1, PS1…) are replaced; SQL and Power BI move to "Later".
+  - PS0 progress: `ArchiveDate` converted; latest month filtered with a boolean mask. Sep 2026 has 74 rows but 55 specialties, because rows are split by `Adult_Child` (41 Adult, 33 Child). The column is spelled `Speciality`.
+  - **Next:** find Problem 1 from the prep plan (test-log parser, 15 Oct) for review; finish PS0 (longest wait: combine adult + child or keep separate?).
