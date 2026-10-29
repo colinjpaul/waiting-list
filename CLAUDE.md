@@ -14,6 +14,14 @@ How to help, in short:
 - Keep explanations plain and concrete; he's rebuilding Python fluency and learning pandas from the basics.
 - Encourage a line in `NOTES.md` for each finding, cleaning decision or practice problem.
 
+## Where things live
+
+Colin works in three places. Keep them separate:
+
+- **VS Code (here): the learning.** Weekday mornings 8:30–10:30: the daily no-AI problem, then one project step. When Colin says "start today's session", read `LEARNING.md`, `NOTES.md` and `practice/`, tell him where he's up to, and give today's problem.
+- **The repo: the single record of progress.** Plan in `LEARNING.md`, findings and practice results in `NOTES.md`, code in `practice/` and `notebooks/`. If it isn't in the repo, it didn't happen.
+- **The "New Job" project in the Claude desktop app: the job search.** CVs, cover letters, applications, company-specific interview prep, and bigger decisions about focus. Decisions there that change the learning plan land here as handoff notes below.
+
 ## Handoff notes (from Colin's planning chat in the Claude desktop app)
 
 Colin also plans with Claude in the desktop app. That chat can't talk to this one, so notes land here.
@@ -35,3 +43,7 @@ Colin also plans with Claude in the desktop app. That chat can't talk to this on
   - LEARNING.md rewritten as one plan following Stage 2 of `qualcomm_prep_plan.xlsx`: 8 weeks of a daily no-AI Python problem plus project steps towards the app. Old step IDs (S1, KP1, PS1…) are replaced; SQL and Power BI move to "Later".
   - PS0 progress: `ArchiveDate` converted; latest month filtered with a boolean mask. Sep 2026 has 74 rows but 55 specialties, because rows are split by `Adult_Child` (41 Adult, 33 Child). The column is spelled `Speciality`.
   - **Next:** find Problem 1 from the prep plan (test-log parser, 15 Oct) for review; finish PS0 (longest wait: combine adult + child or keep separate?).
+- **2026-10-29 · Problem 1 moved**
+  - The test-log parser is now in `practice/p01_log_parser.py` with `practice/test_p01_log_parser.py` (3 real tests plus an empty edge-case stub) and `practice/cheatsheet.py`. The old `~/code/interview_practice` folder is gone.
+  - Still to do, by Colin without AI: `failing_tests` (sorted, no duplicates), `total_time` (1 dp) and the edge-case test. Then review it like an interviewer. Points already raised: docstring promises more than the code does; magic numbers (`6`, `parts[4]`); a well-formed `SKIPPED` line is counted nowhere; `LINES[4]` is unused; whole-dict asserts will break when keys are added.
+  - Colin starts the new approach afresh on Fri 30 Oct 2026, beginning with finishing Problem 1.
