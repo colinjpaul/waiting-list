@@ -5,7 +5,8 @@ Colin's data learning plan, worked through **on this repo**: SQL, pandas and Pyt
 **Why this project:** real Irish health data, relevant to public sector data analyst roles (HSE, CSO, civil service), with Colin's QA background built in through data-quality tests. SQL and pandas count for both the QA and data paths.
 
 **QA track** (Playwright, Python for QA) lives in [back_in_bounds](https://github.com/colinjpaul/back_in_bounds).
-**Study time:** weekday mornings, at Colin's own pace (no deadlines). Mon/Wed/Fri mornings are the waiting list days.
+**Study time:** weekday mornings, at Colin's own pace (no deadlines).
+**Status (from 2026-10-29): on hold after PS0.** Getting a job comes first, so the QA track in back_in_bounds gets every weekday morning. Finish PS0, then pause this track until F1 (Playwright suite green in GitHub Actions) is done.
 **Progress checklist:** the Learning path panel of Colin's *Daily Board* is the master list. Step IDs here (PS0, S1, KP1, PB1…) match it exactly. Update the `[ ]` boxes here as well if useful.
 
 ## How to help (for Claude in VS Code)

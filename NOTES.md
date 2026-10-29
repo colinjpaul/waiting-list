@@ -5,3 +5,9 @@
 - No missing values found (recheck after converting types).
 - ArchiveDate needs pd.to_datetime(dayfirst=True).
 - Confused by: unique() vs nunique(), np.int64 in repr output.
+
+## 29 Oct 2026: working with dataframes (PS0)
+- Latest month (Sep 2026): 74 rows = 55 specialties, split by Adult_Child (41 Adult, 33 Child). One row per specialty per adult/child group.
+- Approach 1: add up adult and child per speciality using groupby
+- Approach 2:  filter by one group using true/false (as before with latest)
+
