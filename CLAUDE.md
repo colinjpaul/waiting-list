@@ -27,4 +27,5 @@ Colin also plans with Claude in the desktop app. That chat can't talk to this on
     2. Which specialty waits longest? (e.g. most people in the 18+ months band in the latest month.)
     3. Cork hospitals needs the **by hospital** file, which isn't downloaded yet: `OpenData_OPNational01_2026.csv` from https://www.ntpf.ie/waiting-list-data/open-data/ (load it with `thousands=","` too).
     4. Is the list up or down over the year? (Total per month.)
-  - Housekeeping to suggest, not do unasked: the raw CSV is currently committed (LEARNING.md planned to keep `data/raw/` out of git; it's small public CC-BY data, so Colin can decide), and `.DS_Store` isn't in `.gitignore` yet.
+- **2026-10-29 · housekeeping done**
+  - `data/raw/` and `.DS_Store` are now in `.gitignore`; the raw CSV is no longer tracked. The README says where to download the data. Raw files live only on Colin's Mac.
