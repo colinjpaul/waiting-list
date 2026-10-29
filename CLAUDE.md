@@ -20,7 +20,7 @@ Colin works in three places. Keep them separate:
 
 - **VS Code (here): the learning.** Morning block 9:30–10:30: the daily no-AI problem. Afternoon block 2:30–3:30: one project step. When Colin says "start today's session" in the morning, read `LEARNING.md`, `NOTES.md` and `practice/`, tell him where he's up to, and give today's problem. In the afternoon, pick up the next project step.
 - **The repo: the single record of progress.** Plan in `LEARNING.md`, findings and practice results in `NOTES.md`, code in `practice/` and `notebooks/`. If it isn't in the repo, it didn't happen.
-- **The "New Job" project in the Claude desktop app: the job search.** CVs, cover letters, applications, company-specific interview prep, and bigger decisions about focus. Decisions there that change the learning plan land here as handoff notes below.
+- **The "New Job" project in the Claude desktop app: the job search,** weekdays 8:30–9:30 before the morning problem. LinkedIn, CVs, cover letters, applications, company-specific interview prep, and bigger decisions about focus. Decisions there that change the learning plan land here as handoff notes below.
 
 ## Handoff notes (from Colin's planning chat in the Claude desktop app)
 
