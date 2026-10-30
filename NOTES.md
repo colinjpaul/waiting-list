@@ -11,3 +11,7 @@
 - Approach 1: add up adult and child per speciality using groupby
 - Approach 2:  filter by one group using true/false (as before with latest)
 
+## 30 Oct 2026: log parser (P1)
+- A trailing comma after {...} turned my dict into a tuple - "tuple indices must be integers".
+- Stopped before failing_tests / total_time.
+

@@ -4,7 +4,7 @@ def summarise(lines):
     Returns a dict with: passed, failed, skipped_lines,
     failing_tests (sorted, no duplicates), total_time (1 dp).
     """
-    result = {"passed": 0, "failed": 0, "skipped_lines": 0}
+    result = {"passed": 0, "failed": 0, "skipped_lines": 0, "failing_tests": 0, "total_time": 0.0}, 
     for line in lines:
         parts = line.split()
         if len(parts) != 6:
