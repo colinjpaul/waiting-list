@@ -7,7 +7,7 @@ Colin's main project and learning plan (from 2026-10-29): interview-ready Python
 Read **LEARNING.md** at the start of a session and follow its "How to help" section. Step IDs (PS0, D1, A1, M1…) match the Learning path checklist on Colin's Daily Board.
 
 How to help, in short:
-- Each day has two parts: the daily Python problem in the morning (9:30–10:30), then one project step in the afternoon (2:30–3:30).
+- Each day has two optional parts (see the 2026-11-02 note below): a QA or data Python puzzle in the morning (9:30–10:30), then a project step or job search in the afternoon (2:30–3:30). Skipping either is fine.
 - Daily problem: Colin writes it **without AI**. Give the problem statement and examples only, then review his solution like an interviewer.
 - Project steps: teach, don't just do. Explain the concept, let Colin write the code, then review it.
 - Ask where he's up to and check `NOTES.md`, `practice/` and the notebooks first.
@@ -20,7 +20,7 @@ Colin works in three places. Keep them separate:
 
 - **VS Code (here): the learning.** Morning block 9:30–10:30: the daily no-AI problem. Afternoon block 2:30–3:30: one project step. When Colin says "start today's session" in the morning, read `LEARNING.md`, `NOTES.md` and `practice/`, tell him where he's up to, and give today's problem. In the afternoon, pick up the next project step.
 - **The repo: the single record of progress.** Plan in `LEARNING.md`, findings and practice results in `NOTES.md`, code in `practice/` and `notebooks/`. If it isn't in the repo, it didn't happen.
-- **The "New Job" project in the Claude desktop app: the job search,** weekdays 8:30–9:30 before the morning problem. LinkedIn, CVs, cover letters, applications, company-specific interview prep, and bigger decisions about focus. Decisions there that change the learning plan land here as handoff notes below.
+- **The "New Job" project in the Claude desktop app: the job search.** Until January this is reactive: a quick look at alerts over coffee at 8:30, and applications only when something strong turns up (see the 2026-11-02 note). LinkedIn, CVs, cover letters, applications, company-specific interview prep, and bigger decisions about focus. Decisions there that change the learning plan land here as handoff notes below.
 
 ## Handoff notes (from Colin's planning chat in the Claude desktop app)
 
@@ -47,3 +47,12 @@ Colin also plans with Claude in the desktop app. That chat can't talk to this on
   - The test-log parser is now in `practice/p01_log_parser.py` with `practice/test_p01_log_parser.py` (3 real tests plus an empty edge-case stub) and `practice/cheatsheet.py`. The old `~/code/interview_practice` folder is gone.
   - Still to do, by Colin without AI: `failing_tests` (sorted, no duplicates), `total_time` (1 dp) and the edge-case test. Then review it like an interviewer. Points already raised: docstring promises more than the code does; magic numbers (`6`, `parts[4]`); a well-formed `SKIPPED` line is counted nowhere; `LINES[4]` is unused; whole-dict asserts will break when keys are added.
   - Colin starts the new approach afresh on Fri 30 Oct 2026, beginning with finishing Problem 1.
+- **2026-11-02 · routine reset until end of 2026 (decided in the Claude desktop planning chat; this note wins over anything above that conflicts)**
+  - **No pressure, no deadlines.** Learning is for enjoyment until January. Don't frame the morning problem as "the daily problem" or something Colin has to do.
+  - **9:30–10:30 is optional:** a Python puzzle with a QA or data flavour (parse a log, check a CSV, write a small test), or Colin may tidy his space instead. Still no AI for writing his solution; review it like an interviewer if he does one.
+  - **10:30–1:00 Mon/Wed is PS5 time** (free time on other days). Tue/Thu are PT/gym at 11:30. Don't plan learning into these slots.
+  - **2:30–3:30 is optional "project or job search time":** a small waiting-list step, an application if something good has turned up, or family time.
+  - **Job search is reactive until January:** Monday job check plus at least one job action a week. Qualcomm rejected him on 30 Oct (gaps from that interview are in LEARNING.md / the board plan). NetApp via Danny is the main live lead.
+  - **PL-300 / Power BI:** may start after the Intreo meeting on Tue 3 Nov. His old Windows laptop now works, so Power BI Desktop runs there. If he goes ahead, it uses the 2:30 slot and the waiting-list data (load one CSV in Power BI first). SQL and Power BI are no longer only "Later" if he chooses this.
+  - **Pace:** Christmas prep and family take priority this year. Keep sessions short and encouraging; if Colin seems stretched, suggest stopping rather than pushing on.
+  - **One place for planning:** Colin plans in the Claude desktop app (mornings and the Friday review) and codes here. If he starts re-planning mid-session, note it in NOTES.md and steer back to the code.
