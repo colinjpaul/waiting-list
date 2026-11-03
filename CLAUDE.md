@@ -49,10 +49,10 @@ Colin also plans with Claude in the desktop app. That chat can't talk to this on
   - Colin starts the new approach afresh on Fri 30 Oct 2026, beginning with finishing Problem 1.
 - **2026-11-02 · routine reset until end of 2026 (decided in the Claude desktop planning chat; this note wins over anything above that conflicts)**
   - **No pressure, no deadlines.** Learning is for enjoyment until January. Don't frame the morning problem as "the daily problem" or something Colin has to do.
-  - **9:30–10:30 is optional:** a Python puzzle with a QA or data flavour (parse a log, check a CSV, write a small test), or Colin may tidy his space instead. Still no AI for writing his solution; review it like an interviewer if he does one.
-  - **10:30–1:00 Mon/Wed is PS5 time** (free time on other days). Tue/Thu are PT/gym at 11:30. Don't plan learning into these slots.
+  - **9:30–10:30 is optional:** a Python puzzle with a QA or data flavour (parse a log, check a CSV, write a small test), Power BI on the Windows laptop, or Colin may tidy his space instead. Still no AI for writing his solution; review it like an interviewer if he does one.
+  - **10:30–1:00 Mon/Wed is PS5 time** (free time on other days). PT once a week at 11:30, day varies with the booking (see the Golf calendar). Other weekdays are free time. Don't plan learning into these slots.
   - **2:30–3:30 is optional "project or job search time":** a small waiting-list step, an application if something good has turned up, or family time.
   - **Job search is reactive until January:** Monday job check plus at least one job action a week. Qualcomm rejected him on 30 Oct (gaps from that interview are in LEARNING.md / the board plan). NetApp via Danny is the main live lead.
-  - **PL-300 / Power BI:** may start after the Intreo meeting on Tue 3 Nov. His old Windows laptop now works, so Power BI Desktop runs there. If he goes ahead, it uses the 2:30 slot and the waiting-list data (load one CSV in Power BI first). SQL and Power BI are no longer only "Later" if he chooses this.
+  - **PL-300 / Power BI:** may start after the Intreo meeting on Tue 3 Nov. His old Windows laptop now works, so Power BI Desktop runs there. If he goes ahead, it can use either the 9:30 or the 2:30 slot and the waiting-list data (load one CSV in Power BI first). SQL and Power BI are no longer only "Later" if he chooses this.
   - **Pace:** Christmas prep and family take priority this year. Keep sessions short and encouraging; if Colin seems stretched, suggest stopping rather than pushing on.
   - **One place for planning:** Colin plans in the Claude desktop app (mornings and the Friday review) and codes here. If he starts re-planning mid-session, note it in NOTES.md and steer back to the code.
