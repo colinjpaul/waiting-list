@@ -15,3 +15,6 @@
 - A trailing comma after {...} turned my dict into a tuple - "tuple indices must be integers".
 - Stopped before failing_tests / total_time.
 
+## 11 Nov 2026:  back to waiting list data
+- Set up on the Windows laptop (data re-downloaded, .venv kernel). Found duplicate Adult rows per specialty per month (e.g. Breast Surgery 994 and 4,511 in Jan): find out why before summing.”
+
