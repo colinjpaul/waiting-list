@@ -9,15 +9,13 @@ LINES = [
 ]
 
 def test_example_from_the_problem():
-    assert summarise([LINES[0]])== {"passed": 1, "failed": 0, "skipped_lines": 0, "failing_tests": 0, "total_time": 1.2}
+    assert summarise([LINES[0]])== {"passed": 1, "failed": 0, "skipped_lines": 0, "failing_tests": [], "total_time": 1.2}
 
-# def test_counts_a_failed_line():
-#     assert summarise(LINES[0:2]) == {"passed": 1, "failed": 1, "skipped_lines": 0}
+def test_counts_a_failed_line():
+    assert summarise(LINES[0:2]) == {"passed": 1, "failed": 1, "skipped_lines": 0, "failing_tests": ["test_upload"], "total_time": 3.4}
 
-# def test_skips_a_garbage_line():
-#     assert summarise(LINES[0:5]) == {"passed": 2, "failed": 2, "skipped_lines": 1} 
-
-
+def test_skips_a_garbage_line():
+   assert summarise(LINES[0:5]) == {"passed": 2, "failed": 2, "skipped_lines": 1} 
 
 
 # def test_my_edge_case():

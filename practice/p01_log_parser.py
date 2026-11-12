@@ -15,5 +15,13 @@ def summarise(lines):
             result["passed"] += 1
         elif status == "FAILED":
             result["failed"] += 1
+            result["failing_tests"].append(parts[3])  # Add the test name to failing_tests
+            print(f"Failed test: {parts[3]}")  # Debugging line to print the failing test name
+        elif status == "SKIPPED":
+            result["skipped_lines"] += 1
+        total_time = float(parts[5][:-1])  # Remove the 's' at the end and convert to float
+        result["total_time"] += total_time
     
+    result["failing_tests"].sort()
+    result["failing_tests"] = list(dict.fromkeys(result["failing_tests"]))  # Remove duplicates
     return result
