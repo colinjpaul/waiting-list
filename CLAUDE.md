@@ -63,5 +63,5 @@ Colin also plans with Claude in the desktop app. That chat can't talk to this on
   - **Next SQL step after P1:** S1 (load the specialty CSV into SQLite), then S2 (investigate the duplicate Adult rows found on 11 Nov before summing anything).
 - **2026-11-13 (afternoon) · P1 nearly done — pick up Monday in VS Code**
   - Done: rounding once after the loop; `empty_lines` added (blank or whitespace-only lines counted separately from garbage); expected values fixed (4.6, 8.3); all 4 tests pass.
-  - Left for "done": remove the debugging `print`; add `empty_lines` to the docstring; decide how a valid `SKIPPED` line should count (currently goes into `skipped_lines` with garbage, and its time is added) and add one test that proves it. `test_my_edge_case` currently duplicates test 3 (`LINES[0:6]` is the whole list).
+  - Print removed and docstring updated (13 Nov, 15:23). Left for "done": decide how a valid `SKIPPED` line should count (currently goes into `skipped_lines` with garbage, and its time is added) and add one test that proves it. `test_my_edge_case` currently duplicates test 3 (`LINES[0:6]` is the whole list).
   - Interview talking points (optional): `"1.2"[:-1]` silently gives `1.` if the `s` is missing; magic numbers 6/4/3/5; comments that repeat the code; shared `LINES` slices are fragile and whole-dict asserts break when a key is added.
