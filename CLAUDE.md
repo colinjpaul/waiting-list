@@ -56,3 +56,8 @@ Colin also plans with Claude in the desktop app. That chat can't talk to this on
   - **PL-300 / Power BI:** may start after the Intreo meeting on Tue 3 Nov. His old Windows laptop now works, so Power BI Desktop runs there. If he goes ahead, it can use either the 9:30 or the 2:30 slot and the waiting-list data (load one CSV in Power BI first). SQL and Power BI are no longer only "Later" if he chooses this.
   - **Pace:** Christmas prep and family take priority this year. Keep sessions short and encouraging; if Colin seems stretched, suggest stopping rather than pushing on.
   - **One place for planning:** Colin plans in the Claude desktop app (mornings and the Friday review) and codes here. If he starts re-planning mid-session, note it in NOTES.md and steer back to the code.
+- **2026-11-13 · SQL first, own pace (decided in the Claude desktop planning chat; this note wins over anything above that conflicts)**
+  - **LEARNING.md was rewritten today.** Follow it: finish P1 (log parser), then the SQL steps S1–S6 on the waiting-list data, then Power BI (B1–B2), with the Python track alongside PCAP from 7 Dec. SQL is no longer "Later".
+  - **No fixed time slots.** The 9:30 and 2:30 blocks above are retired; Colin works at his own pace. The eCollege Power BI course is the main focus until 4 Dec; the waiting list is the side project.
+  - **Hints only on code.** Colin writes his own code and queries; give hints and questions, then review like an interviewer.
+  - **Next SQL step after P1:** S1 (load the specialty CSV into SQLite), then S2 (investigate the duplicate Adult rows found on 11 Nov before summing anything).

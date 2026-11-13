@@ -1,83 +1,86 @@
 # Learning Path — The Waiting List
 
-Colin's single learning plan from 2026-10-29: **interview-ready Python at senior SDET level**, built into **one portfolio project** on Irish public hospital waiting list data (NTPF). Each step is a real change to this repo, so the learning and the portfolio grow together.
+Colin's learning plan, built into **one portfolio project** on Irish public hospital waiting list data (NTPF). Each step is a real change to this repo, so the learning and the portfolio grow together.
 
-**Why:** getting a job is the priority. The Python part of the Qualcomm interview (22 Oct) showed live coding needs work, so this follows Stage 2 of `qualcomm_prep_plan.xlsx` (Google Drive): about 8 weeks to "comfortable live-coding at senior SDET level". The waiting list app is where those skills get used, and it shows QA skills (pytest, Playwright, CI) and data skills (pandas, SQL) in one place.
+**Updated 2026-11-13: SQL first.** The plan from 2026-10-29 put eight weeks of Python first and SQL under "Later". Since then Colin decided to tailor his learning towards **SQL** (it keeps coming up in the roles he's looking at), with **Python for loading, cleaning and tests**. AWS is on hold. This file now follows that order.
+
+**Why:** getting a job is the priority, on two paths. The data analyst path needs SQL and Power BI; the QA path needs Python, pytest, Playwright and CI. This one project shows both on real public-sector data.
 
 **back_in_bounds** is paused. Nothing there is deleted.
-**Study time:** at Colin's own pace: **9:30–10:30** Mon–Fri for the daily problem, **2:30–3:30** Mon–Thu for the project step (Friday afternoon is family time). These match the focus blocks in *My day* on the Daily Board. The week numbers are a guide, not deadlines.
-**Progress checklist:** the Learning path panel of Colin's *Daily Board* mirrors this file. Step IDs (PS0, D1, A1…) match it.
+
+## Formal courses alongside the project
+
+| When | Course | Feeds into |
+|---|---|---|
+| Now → 4 Dec 2026 | eCollege *Introduction to Power BI* (access ends 8 Dec) | B1–B2 below |
+| After Power BI | ICT Skillnet *Data Analytics Essentials* (SQL) | S-steps below |
+| From 7 Dec 2026 | PCAP Python (eCollege) | Python track below |
+
+## How the time is used
+
+- **At Colin's own pace. No fixed timetable, no deadlines** apart from the courses above.
+- **Main focus until 4 Dec: the Power BI course.** The waiting list is the side project: short sessions on the next S-step when there's energy. Skipping a day is fine.
+- Finish one thing before opening another: close out P1 (log parser) first.
+- **Progress checklist:** the Learning path panel of Colin's *Daily Board* mirrors this file. Step IDs match it.
 
 ## How to help (for Claude in VS Code)
 
-- Each day has two parts: **the daily problem in the morning block (9:30–10:30), then one project step in the afternoon block (2:30–3:30).**
-- **Daily problem: no AI while Colin writes it.** When asked, give the problem statement and example input/output only: no hints, no code. Afterwards, review his solution like an interviewer would: correctness, edge cases, naming, tests, and how he'd explain it out loud. Suggest a better version only after he's had his go.
-- **Project steps:** teach, don't just do. Explain the concept, let Colin write the code, then review it.
-- Start by checking `NOTES.md`, the `practice/` folder and the notebooks to see where he's up to.
+- **Colin writes his own code.** Give hints, questions and the problem statement, not solutions. Afterwards, review it like an interviewer would: correctness, edge cases, naming, tests, and how he'd explain it out loud. Suggest a better version only after he's had his go.
+- **Project steps:** teach, don't just do. Explain the concept, let Colin write the code or query, then review it.
+- Start by checking `NOTES.md`, `practice/`, `sql/` and the notebooks to see where he's up to.
 - Keep explanations plain and concrete. Keep changes small and committed per step.
 - Encourage a line in `NOTES.md` for each finding, cleaning decision or practice problem.
 - Raw CSVs stay out of git (`data/raw/` is ignored); the README says where each file came from.
 
-## The daily problem (morning block, 30–45 min)
-
-1. Ask Claude for today's problem, matched to the current week's focus below.
-2. Set a timer (aim for 20 minutes by week 2). Talk through it **out loud** as if in an interview.
-3. Write the simplest version first, then add a pytest test or two.
-4. Ask Claude for a review. Note the problem, time taken and one lesson in `NOTES.md`.
-
-Files go in `practice/`: `practice/p01_log_parser.py` with `practice/test_p01_log_parser.py`. Sample input files go in `practice/data/` and should end in `.txt`, because `*.log` files are ignored by git.
-
-Problems are a mix: interview-style (test logs, tool output, strings) and ones using the NTPF CSVs.
-
-**First:** find Problem 1 from the prep plan (test-log parser + 2 pytest tests, started 15 Oct) and get it reviewed. The review sets the starting level for week 1.
-
 ---
 
-## Weeks 1–2 · Core Python
+## Now · Finish Problem 1
 
-Focus: strings, lists, dicts, sets, comprehensions, functions, error handling.
-**Ready when:** you can solve a log/CSV problem in 20 minutes without looking things up.
+- [ ] **P1** Test-log parser (`practice/p01_log_parser.py`): round `total_time` once after the loop, remove the debugging `print`, fix the expected values in the other two tests, add an edge-case test for a valid `SKIPPED` line (decide first: should it count in `skipped_lines`?). Run `pytest -v`, commit, then get an interviewer-style review.
 
-- [ ] **PS0** Finish the first look in `notebooks/01_explore.ipynb`: which specialty waits longest (decide: combine adult + child, or keep separate), and is the list up or down over the year (total per month). Write the findings in `NOTES.md`.
-- [ ] **D1** Plain Python, no pandas: read the specialty CSV with the `csv` module and write a function that returns the total waiting per specialty for one month, as a dict. Watch out for the commas in the numbers.
-- [ ] **D2** Write the same answer in pandas and add a pytest test that checks the plain Python and pandas answers match.
-- [ ] **D3** Download the by-hospital file (`OpenData_OPNational01_2026.csv`) and answer the Cork question both ways: how many are waiting at Cork hospitals?
+## Next · SQL on the waiting list data (side project until 4 Dec)
 
-## Weeks 3–4 · Classes, files and pytest
+Python loads the data; the questions are answered in SQL. Save each good query as a `.sql` file in `sql/` with a comment saying what it answers.
 
-Focus: classes, file I/O, json/csv, `re`, pytest fixtures and parametrize.
-**Ready when:** you can write a small class and its tests from scratch.
+- [x] **PS0** First look in `notebooks/01_explore.ipynb`: commas in numbers fixed (`thousands=","`), `ArchiveDate` converted, latest month filtered. (Its open questions move to S2–S4.)
+- [ ] **S1** Load the outpatient-by-specialty CSV into SQLite (`data/waiting.db`, ignored by git) with a short Python script. Check the row count matches the CSV.
+- [ ] **S2** Investigate the duplicate Adult rows found on 11 Nov (e.g. Breast Surgery 994 and 4,511 in January) with `GROUP BY … HAVING COUNT(*) > 1`. Find out why before summing anything. Note the answer in `NOTES.md`.
+- [ ] **S3** Which specialty waits longest? Most people in the 18+ months band in the latest month. Decide: combine adult + child, or keep separate.
+- [ ] **S4** Is the list up or down over the year? Total per month, then month-on-month change with `LAG()`.
+- [ ] **S5** Download the by-hospital file (`OpenData_OPNational01_2026.csv`), load it, and answer: how many are waiting at Cork hospitals?
+- [ ] **S6** `RANK()` specialties by long waits each month; a CTE that combines S3 and S4.
 
+## Then · Power BI on the same data (after the course)
+
+- [ ] **B1** Load the cleaned data (or the S-step query results) into Power BI Desktop on the Windows laptop, using Transform Data (Power Query) for the cleaning.
+- [ ] **B2** A one-page dashboard: waits by time band per specialty, trend over the year, Cork hospitals. Screenshot for the README.
+
+## Python track (alongside PCAP from 7 Dec)
+
+Focus: strings, lists, dicts, comprehensions, functions, error handling, then classes and pytest.
+
+- [ ] **D1** Plain Python, no pandas: read the specialty CSV with the `csv` module and return the total waiting per specialty for one month, as a dict. Watch out for the commas in the numbers.
+- [ ] **D2** Same answer in pandas, plus a pytest test that checks plain Python, pandas and the S-step SQL answers all match.
 - [ ] **D4** A `Snapshot` class for one month's data (load, total, by specialty, by time band), with tests.
-- [ ] **D5** Data-quality tests with pytest: time bands add up to `Total`, no negative counts, no missing specialties, one snapshot per month. Use small test CSVs in `tests/data/` with known answers, loaded by a fixture in `conftest.py`.
-- [ ] **D6** Parametrize the data-quality tests to run over every monthly snapshot. Write each real problem you find in `NOTES.md`.
+- [ ] **D5** Data-quality tests with pytest: time bands add up to `Total`, no negative counts, no missing specialties, one snapshot per month. Small test CSVs in `tests/data/` with known answers, loaded by a fixture in `conftest.py`.
+- [ ] **D6** Parametrize the data-quality tests over every monthly snapshot. Write each real problem found in `NOTES.md`.
 
-## Weeks 5–6 · Test-automation tasks
+## Later · Test automation, the app and CI (when the above is done, or a job ad asks for it)
 
-Focus: a `requests` API client, mocking, retry wrappers, parsing tool output, `subprocess`.
-**Ready when:** you can talk through and build a small framework piece live.
+- [ ] **A1** NTPF downloader with `requests`, saving to `data/raw/`.
+- [ ] **A2** Retry wrapper, tested with a mocked response so tests never hit the real site.
+- [ ] **A3** Small Dash app, "How long will I wait?": pick a specialty to see the time bands and the trend.
+- [ ] **A4** Run pytest from a script with `subprocess` and parse its output into a summary (builds on P1).
+- [ ] **A5** Playwright tests for the app: page loads, picking a specialty updates the numbers, the chart renders. `get_by_role` / `get_by_test_id` locators and `expect()`.
+- [ ] **A6** GitHub Actions: install, run unit and data-quality tests, start the app, run Playwright, upload a trace on failure. Status badge in the README.
+- [ ] **A7** README: what it does, screenshot, key findings, how the tests are organised, what was learned.
+- [ ] **M1** Mock interviews: timed problems, thinking out loud, Claude as interviewer.
 
-- [ ] **A1** NTPF downloader: a function that fetches a given file with `requests` and saves it to `data/raw/`.
-- [ ] **A2** Add a retry wrapper (e.g. 3 attempts with a wait), and test it with a mocked response so the tests never hit the real site.
-- [ ] **A3** The app: a small Dash app, "How long will I wait?". Pick a specialty to see the numbers in each time band and the trend over the year.
-- [ ] **A4** Run pytest from a script with `subprocess` and parse its output into a short summary (passed / failed / time).
+## Other ideas
 
-## Weeks 7–8 · Mock interviews, end-to-end tests and CI
-
-Focus: timed mock interviews with Claude as interviewer; finishing the portfolio.
-**Ready when:** you stay calm and structured even when stuck.
-
-- [ ] **M1** Mock interviews: timed problems, thinking out loud, Claude as interviewer. Two or three a week.
-- [ ] **A5** Playwright tests for the app: the page loads, picking a specialty updates the numbers, the chart renders. Use `get_by_role` / `get_by_test_id` locators and `expect()`.
-- [ ] **A6** GitHub Actions: install, run the unit and data-quality tests, start the app, run the Playwright tests, and upload a trace on failure. Add the status badge to the README.
-- [ ] **A7** README: what the app does, a screenshot, key findings, how the tests are organised, and what you learned.
-
-## Later (after the 8 weeks, or when a job ad asks for it)
-
-- **SQL:** load the data into SQLite (`waiting.db`), then `GROUP BY`, `JOIN`, CTEs, window functions (`LAG()`, `RANK()`). Save good queries in `sql/`.
 - **pandas course:** https://www.kaggle.com/learn/pandas, to fill gaps.
 - **More data:** inpatient/day case and GI endoscopy lists; CSO population figures for waits per head.
-- **Power BI / Tableau Public** for data analyst roles. Power BI doesn't run on a Mac.
+- **Tableau Public**, if a data analyst job ad asks for it.
 
 ---
 
